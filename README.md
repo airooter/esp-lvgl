@@ -1,4 +1,5 @@
-# esp-lvgl
+# esp-lvgl [中文版](https://github.com/airooter/esp-lvgl/blob/main/README_cn.md)
+
 
 #### Introduction
 
