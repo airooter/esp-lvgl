@@ -22,6 +22,7 @@ bleKeyboard.begin();
 
 void loop() {
 if (bleKeyboard.isConnected()) {
+
 Serial.println("Sending 'Hello world'..."); // 发送“Hello world”
 bleKeyboard.print("Hello world"); // 打印“Hello world”
 
