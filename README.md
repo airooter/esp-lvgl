@@ -15,7 +15,7 @@ This project is synchronized and updated on both Gitee and Github.
 
 ###### 1. Arduino Basics
 
-- **WeChat Official Account Article**: [Arduino IDE: The Programming Tool for Opening a New World of Electronics](http://https://mp.weixin.qq.com/s/TkQT3FdRbCkaLZswKrsMrw)
+-  [Arduino IDE: The Programming Tool for ](http://https://mp.weixin.qq.com/s/TkQT3FdRbCkaLZswKrsMrw)
 - Github link included in the article
 - **Arduino IDE Domestic Download**: [Baidu Netdisk Download: Extraction Code: 6688](https://pan.baidu.com/s/1a26dNOMuRdsQojYUlaiGWg?pwd=6688)
 
