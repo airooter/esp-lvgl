@@ -1,6 +1,9 @@
-# ESP32 BLE键盘库
-
+# ESP32 BLE键盘库 
 # ESP32 BLE Keyboard library
+
+# 注意这个库的0.3.0Release版有严重Bug，这里的代码是0.3.2-beta版
+
+
 
 这个库允许你把ESP32变成蓝牙键盘并控制它的操作。  
 你可能也会对以下内容感兴趣：
