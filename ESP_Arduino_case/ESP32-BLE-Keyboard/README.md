@@ -1,36 +1,38 @@
+# ESP32 BLE键盘库
+
 # ESP32 BLE Keyboard library
 
-This library allows you to make the ESP32 act as a Bluetooth Keyboard and control what it does.  
-You might also be interested in:
+这个库允许你把ESP32变成蓝牙键盘并控制它的操作。  
+你可能也会对以下内容感兴趣：
 - [ESP32-BLE-Mouse](https://github.com/T-vK/ESP32-BLE-Mouse)
 - [ESP32-BLE-Gamepad](https://github.com/lemmingDev/ESP32-BLE-Gamepad)
 
 
-## Features
+## 特性
 
- - [x] Send key strokes
- - [x] Send text
- - [x] Press/release individual keys
- - [x] Media keys are supported
- - [ ] Read Numlock/Capslock/Scrolllock state
- - [x] Set battery level (basically works, but doesn't show up in Android's status bar)
- - [x] Compatible with Android
- - [x] Compatible with Windows
- - [x] Compatible with Linux
- - [x] Compatible with MacOS X (not stable, some people have issues, doesn't work with old devices)
- - [x] Compatible with iOS (not stable, some people have issues, doesn't work with old devices)
+ - [x] 发送按键操作
+ - [x] 发送文本
+ - [x] 按下/释放单个按键
+ - [x] 支持媒体按键
+ - [ ] 读取Numlock/Capslock/Scrolllock状态
+ - [x] 设置电池电量（基本上可行，但在Android状态栏中不显示）
+ - [x] 兼容Android
+ - [x] 兼容Windows
+ - [x] 兼容Linux
+ - [x] 兼容MacOS X（不稳定，部分用户遇到问题，旧设备不支持）
+ - [x] 兼容iOS（不稳定，部分用户遇到问题，旧设备不支持）
 
-## Installation
-- (Make sure you can use the ESP32 with the Arduino IDE. [Instructions can be found here.](https://github.com/espressif/arduino-esp32#installation-instructions))
-- [Download the latest release of this library from the release page.](https://github.com/T-vK/ESP32-BLE-Keyboard/releases)
-- In the Arduino IDE go to "Sketch" -> "Include Library" -> "Add .ZIP Library..." and select the file you just downloaded.
-- You can now go to "File" -> "Examples" -> "ESP32 BLE Keyboard" and select any of the examples to get started.
+## 安装
+- （确保你可以在Arduino IDE中使用ESP32。[安装指南请点击此链接。](https://github.com/espressif/arduino-esp32#installation-instructions)）
+- [从发布页面下载此库的最新版本。](https://github.com/T-vK/ESP32-BLE-Keyboard/releases)
+- 在Arduino IDE中转到“Sketch”->“Include Library”->“Add .ZIP Library...”，然后选择刚刚下载的文件。
+- 现在你可以转到“文件”->“示例”->“ESP32 BLE Keyboard”，选择任何一个示例进行开始。
 
-## Example
+## 示例
 
 ``` C++
 /**
- * This example turns the ESP32 into a Bluetooth LE keyboard that writes the words, presses Enter, presses a media key and then Ctrl+Alt+Delete
+ * 此示例将ESP32变成蓝牙低功耗键盘，写入单词，按Enter键，按媒体按键，然后按Ctrl+Alt+Delete
  */
 #include <BleKeyboard.h>
 
@@ -58,18 +60,13 @@ void loop() {
     bleKeyboard.write(KEY_MEDIA_PLAY_PAUSE);
 
     delay(1000);
-    
-   //
-   // Below is an example of pressing multiple keyboard modifiers 
-   // which by default is commented out. 
-   // 
-   /* Serial.println("Sending Ctrl+Alt+Delete...");
+
+    Serial.println("Sending Ctrl+Alt+Delete...");
     bleKeyboard.press(KEY_LEFT_CTRL);
     bleKeyboard.press(KEY_LEFT_ALT);
     bleKeyboard.press(KEY_DELETE);
     delay(100);
     bleKeyboard.releaseAll();
-    */
 
   }
   Serial.println("Waiting 5 seconds...");
@@ -77,17 +74,17 @@ void loop() {
 }
 ```
 
-## API docs
-The BleKeyboard interface is almost identical to the Keyboard Interface, so you can use documentation right here:
+## API文档
+BleKeyboard接口几乎与键盘接口相同，因此你可以在这里使用文档：
 https://www.arduino.cc/reference/en/language/functions/usb/keyboard/
 
-Just remember that you have to use `bleKeyboard` instead of just `Keyboard` and you need these two lines at the top of your script:
+只需记住，你必须使用`bleKeyboard`而不是仅使用`Keyboard`，并且在脚本顶部需要这两行：
 ```
 #include <BleKeyboard.h>
 BleKeyboard bleKeyboard;
 ```
 
-In addition to that you can send media keys (which is not possible with the USB keyboard library). Supported are the following:
+除此之外，你还可以发送媒体按键（这是USB键盘库无法做到的）。支持以下按键：
 - KEY_MEDIA_NEXT_TRACK
 - KEY_MEDIA_PREVIOUS_TRACK
 - KEY_MEDIA_STOP
@@ -96,67 +93,66 @@ In addition to that you can send media keys (which is not possible with the USB 
 - KEY_MEDIA_VOLUME_UP
 - KEY_MEDIA_VOLUME_DOWN
 - KEY_MEDIA_WWW_HOME
-- KEY_MEDIA_LOCAL_MACHINE_BROWSER // Opens "My Computer" on Windows
+- KEY_MEDIA_LOCAL_MACHINE_BROWSER // 在Windows上打开“我的电脑”
 - KEY_MEDIA_CALCULATOR
 - KEY_MEDIA_WWW_BOOKMARKS
 - KEY_MEDIA_WWW_SEARCH
 - KEY_MEDIA_WWW_STOP
 - KEY_MEDIA_WWW_BACK
-- KEY_MEDIA_CONSUMER_CONTROL_CONFIGURATION // Media Selection
+- KEY_MEDIA_CONSUMER_CONTROL_CONFIGURATION // 媒体选择
 - KEY_MEDIA_EMAIL_READER
 
-There is also Bluetooth specific information that you can set (optional):
-Instead of `BleKeyboard bleKeyboard;` you can do `BleKeyboard bleKeyboard("Bluetooth Device Name", "Bluetooth Device Manufacturer", 100);`. (Max lenght is 15 characters, anything beyond that will be truncated.)  
-The third parameter is the initial battery level of your device. To adjust the battery level later on you can simply call e.g.  `bleKeyboard.setBatteryLevel(50)` (set battery level to 50%).  
-By default the battery level will be set to 100%, the device name will be `ESP32 Bluetooth Keyboard` and the manufacturer will be `Espressif`.  
-There is also a `setDelay` method to set a delay between each key event. E.g. `bleKeyboard.setDelay(10)` (10 milliseconds). The default is `8`.  
-This feature is meant to compensate for some applications and devices that can't handle fast input and will skip letters if too many keys are sent in a small time frame.  
+此外，你还可以设置蓝牙特定的信息（可选）：
+在`BleKeyboard bleKeyboard;`之后，你可以使用`BleKeyboard bleKeyboard("蓝牙设备名称", "蓝牙设备制造商", 100);`。（最大长度为15个字符，超出部分将被截断。）
+第三个参数是你的设备的初始电池电量。要在以后调整电池电量，只需简单地调用`bleKeyboard.setBatteryLevel(50)`（设置电池电量为50%）。
+默认情况下，电池电量将被设置为100%，设备名称将为`ESP32 Bluetooth Keyboard`，制造商将为`Espressif`。
+还有一个`setDelay`方法用于设置每个键事件之间的延迟。例如`bleKeyboard.setDelay(10)`（10毫秒）。默认值为`8`。
+这个功能旨在弥补一些应用程序和设备无法处理快速输入，会在短时间内发送太多按键而跳过字母。
 
-## NimBLE-Mode
-The NimBLE mode enables a significant saving of RAM and FLASH memory.
+## NimBLE模式
+NimBLE模式可以显著节省RAM和FLASH存储器。
 
-### Comparison (SendKeyStrokes.ino at compile-time)
+### 比较（编译时的SendKeyStrokes.ino）
 
-**Standard**
+**标准**
 ```
-RAM:   [=         ]   9.3% (used 30548 bytes from 327680 bytes)
-Flash: [========  ]  75.8% (used 994120 bytes from 1310720 bytes)
-```
-
-**NimBLE mode**
-```
-RAM:   [=         ]   8.3% (used 27180 bytes from 327680 bytes)
-Flash: [====      ]  44.2% (used 579158 bytes from 1310720 bytes)
+RAM:   [=         ]   9.3%（从327680字节中使用了30548字节）
+Flash: [========  ]  75.8%（从1310720字节中使用了994120字节）
 ```
 
-### Comparison (SendKeyStrokes.ino at run-time)
+**NimBLE模式**
+```
+RAM:   [=         ]   8.3%（从327680字节中使用了27180字节）
+Flash: [====      ]  44.2%（从1310720字节中使用了579158字节）
+```
 
-|   | Standard | NimBLE mode | difference
+### 比较（运行时的SendKeyStrokes.ino）
+
+|   | 标准 | NimBLE模式 | 差异
 |---|--:|--:|--:|
 | `ESP.getHeapSize()`   | 296.804 | 321.252 | **+ 24.448**  |
 | `ESP.getFreeHeap()`   | 143.572 | 260.764 | **+ 117.192** |
 | `ESP.getSketchSize()` | 994.224 | 579.264 | **- 414.960** |
 
-## How to activate NimBLE mode?
+### 如何激活NimBLE模式？
 
-### ArduinoIDE: 
-Uncomment the first line in BleKeyboard.h
+ArduinoIDE：在包含库之前，插入以下行 `#define USE_NIMBLE`
 ```C++
 #define USE_NIMBLE
+#include <BleKeyboard.h>
 ```
 
-### PlatformIO:
-Change your `platformio.ini` to the following settings
+PlatformIO：更改你的`platformio.ini`到以下设置
 ```ini
 lib_deps = 
   NimBLE-Arduino
 
-build_flags = 
+build-flags = 
   -D USE_NIMBLE
 ```
 
-## Credits
+## 鸣谢
 
-Credits to [chegewara](https://github.com/chegewara) and [the authors of the USB keyboard library](https://github.com/arduino-libraries/Keyboard/) as this project is heavily based on their work!  
-Also, credits to [duke2421](https://github.com/T-vK/ESP32-BLE-Keyboard/issues/1) who helped a lot with testing, debugging and fixing the device descriptor!
-And credits to [sivar2311](https://github.com/sivar2311) for adding NimBLE support, greatly reducing the memory footprint, fixing advertising issues and for adding the `setDelay` method.
+感谢[chegewara](https://github.com/chegewara)和[USB键盘库的作者](https://github.com/arduino-libraries/Keyboard/)，因为这个项目在很大程度上基于他们的工作！
+还有感谢[duke2421](https://github.com/T-vK/ESP32-BLE-Keyboard/issues/1)，他在测试、调试和修复设备描述符方面提供了很大帮助！
+还有感谢[sivar2311](https://github.com/sivar2311)为添加NimBLE支持，大大减少内存占用，修复广告问题和添加`setDelay`方法做出的贡献。
