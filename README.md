@@ -60,27 +60,6 @@ The variety of development boards is growing, and currently, the project include
 
 ![2.1-inch 480*480TFT Circular LCD Rotary Screen Smart Serial Screen with WiFi Bluetooth Module ESP32-C3](image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240606190550.jpg)
 
-#### Project Sponsors and Partners
-
-**Uyee Visual** sponsors and supports this project with development board support. The demonstration development board for this project is sponsored by **Uyee Visual**. Developers contributing code have the opportunity to receive quarterly outstanding contribution awards, consisting of certificates of honor and Uyee Visual development boards.
-
-#### Open Source License and Risks of Commercial Use
-
-This project follows the MIT open-source license and aims to provide free learning resources for individual users. Individual users can freely use it without worrying about any risks. This is the basic principle of all open-source licenses.
-
-However, for commercial users, caution is needed when it comes to "free commercial use" of open-source projects. Although open-source licenses allow free use, this free use is conditional and carries potential intellectual property risks.
-
-Open-source projects only open the source code, which does not mean the free opening of intellectual property rights and copyrights.
-
-Open-source projects hope to gain influence through the wide dissemination among individual users and ultimately gain recognition from commercial users, achieving win-win results. Free commercial use can be understood as a kind of early trial. Once open-source projects are widely recognized in the commercial field, developers expect to receive certain commercial returns.
-
-If commercial users gain huge profits by using open-source projects for free without authorization, there are potential intellectual property risks.
-
-Commercial users willing to pay for open-source projects usually hope to develop together with developers, achieving win-win results.
-
-Therefore, commercial users must inform the project author in advance and obtain authorization before using this project. This will help avoid unnecessary intellectual property risks and promote the healthy development of open-source projects.
-
-**At the same time, the open-source license also guarantees the authors of contributed code to retain the intellectual property rights of their contributions. This encourages more developers to participate in the project, contributing to its improvement and development. We welcome all developers interested in the project to contribute code, jointly creating a better project!**
 
 #### Contributing
 
