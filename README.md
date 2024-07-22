@@ -13,7 +13,7 @@ This project is synchronized and updated on both Gitee and Github.
 
 #### Latest Content
 
-###### 0. using ESP32 to drive an SPI display and run the LVGL graphics library
+###### 0. using ESP32 to drive an SPI display and run the LVGL graphics library-  [code is here:](https://github.com/airooter/esp-lvgl/tree/main/ESP_Arduino_case/1.28inch_LCD_lvgl_GFX_driver_gc9a01_board)
 
 We have used an ESP32-CAM board to drive an 1.28inch gc9a01 round LCD, and we also have driven two round LCD **VIEWE** esp32 board。
 
@@ -26,7 +26,7 @@ We have used an ESP32-CAM board to drive an 1.28inch gc9a01 round LCD, and we al
 
 ###### 1. Arduino Basics
 
--  [Arduino IDE: The Programming Tool for ](http://https://mp.weixin.qq.com/s/TkQT3FdRbCkaLZswKrsMrw)
+-  [Arduino IDE: The Programming Tool for ](https://mp.weixin.qq.com/s/TkQT3FdRbCkaLZswKrsMrw)
 - Github link included in the article
 - **Arduino IDE Domestic Download**: [Baidu Netdisk Download: Extraction Code: 6688](https://pan.baidu.com/s/1a26dNOMuRdsQojYUlaiGWg?pwd=6688)
 
