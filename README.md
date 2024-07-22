@@ -13,6 +13,14 @@ This project is synchronized and updated on both Gitee and Github.
 
 #### Latest Content
 
+###### 0. using ESP32 to drive an SPI display and run the LVGL graphics library
+
+We have used an ESP32-CAM board to drive an 1.28inch gc9a01 round LCD.
+
+![esp32-spi](image/esp32-spi-lcd.jpg)
+
+
+
 ###### 1. Arduino Basics
 
 -  [Arduino IDE: The Programming Tool for ](http://https://mp.weixin.qq.com/s/TkQT3FdRbCkaLZswKrsMrw)
