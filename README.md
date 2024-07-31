@@ -13,6 +13,11 @@ This project is synchronized and updated on both Gitee and Github.
 
 #### Latest Content
 
+###### 00. using Image buttons to build lvgl gui-  [code is here:](https://github.com/airooter/esp-lvgl/tree/main/ESP_Arduino_case/5inch_st7262_board_lvgl_Multi_Pages)
+
+![esp32-spi](image/5inch_board_multipage_gui_imgbtn.jpg)
+
+
 ###### 0. using ESP32 to drive an SPI display and run the LVGL graphics library-  [code is here:](https://github.com/airooter/esp-lvgl/tree/main/ESP_Arduino_case/1.28inch_LCD_lvgl_GFX_driver_gc9a01_board)
 
 We have used an ESP32-CAM board to drive an 1.28inch gc9a01 round LCD, and we also have driven two round LCD **VIEWE** esp32 board。
