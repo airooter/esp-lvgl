@@ -13,6 +13,10 @@ This project is synchronized and updated on both Gitee and Github.
 
 #### Latest Content
 
+###### 00. One esp32 drives tow screens-  [code is here:](https://github.com/airooter/esp-lvgl/tree/main/ESP_Arduino_case/0_one_ESP32_drive_two_Screens)
+
+![esp32-spi](image/one esp32 drive two screens.jpg)
+
 ###### 00. using Image buttons to build lvgl gui-  [code is here:](https://github.com/airooter/esp-lvgl/tree/main/ESP_Arduino_case/5inch_st7262_board_lvgl_Multi_Pages)
 
 ![esp32-spi](image/5inch_board_multipage_gui_imgbtn.jpg)
